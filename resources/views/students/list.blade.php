@@ -15,7 +15,7 @@
           <th>Gender</th>
           <th>Address</th>
           <th>Active</th>
-          <th>Actions</th>
+          <th><a href="{{route('students.create')}}"><button>Create</button></a></th>
       </thead>
       <tbody>
           @foreach($students as $student)
@@ -46,6 +46,7 @@
                     <a href="{{ route('students.edit', $student->id) }}">
                       <button>Edit</button>
                     </a>
+    
                   </td>
               </tr>
           @endforeach

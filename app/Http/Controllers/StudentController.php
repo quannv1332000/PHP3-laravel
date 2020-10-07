@@ -30,7 +30,7 @@ class StudentController extends Controller
     // create() su dung phuong thuc GET, route name la students.create
     public function create()
     {
-        dd('Student Controller create');
+        return view('students.create');
     }
 
     /**
@@ -42,10 +42,14 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $student = new Student;
-
         $student->name = $request->name;
-        // ....
+        $student->phone = $request->phone;
+        $student->gender = $request->gender;
+        $student->age = $request->age;
+        $student->address = $request->address;
+        $student->is_active = $request->is_active;
         $student->save();
+        return redirect()->route('students.index');
     }
 
     /**
